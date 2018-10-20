@@ -1,4 +1,4 @@
-.footer {
+footer.footer {
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -8,43 +8,76 @@
     justify-content: center;
     align-items: center;
 }
-.footer p {
+footer.footer p {
     margin: 0;
 }
-div#gridContainer {
+section#gridContainer {
     margin: 20px;
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr;
 }
-div#gridContainer section {
-    height: 160px;
-    background-color: darkcyan;
+
+section#gridContainer div.parent {
+    height: 360px;
+    overflow: hidden;
+    cursor: pointer;
+}
+section#gridContainer div.parent div.child {
+    width: 100%;
+    height: 100%;
+    transition: all .5s;  
+    background-color: white; /* fallback color */
+    background-position: center;
+    background-size: cover; 
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+}
+section#gridContainer div#parent1 div#child1 {
+    background-image: url("assets/black-and-white-bottle-business-1128207.jpg");
+}
+section#gridContainer div#parent2 div#child2 {
+    background-image: url("assets/beach-blue-colors-1150618.jpg");
     color: white;
 }
+section#gridContainer div.parent:hover div.child{
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+section#gridContainer div.parent div.child div.overlay {
+    opacity: 0;
+    color: black;
+    font-size: 28px;
+}
+section#gridContainer div#parent1 div#child1 div#overlay1 {
+    color: black;
+}
+section#gridContainer div#parent2 div#child2 div#overlay2 {
+    color: white;
+}
+section#gridContainer div.parent:hover div.child div.overlay {
+    opacity: 1;
+}
 @media only screen and (min-width: 601px) {
-    div#gridContainer {
+    section#gridContainer {
         grid-template-columns: 1fr 1fr;
     }
-    div#cardContainer {
+    section#cardContainer {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
 @media only screen and (max-width: 600px) {
-    div#gridContainer {
+    section#gridContainer {
         grid-template-columns: 1fr;
     }
-    div#cardContainer {
+    section#cardContainer {
         grid-template-columns: 1fr;
     }
 }
 
 /* Flip cards */
-#cardContainer {
+section#cardContainer {
     margin: 20px;
     display: grid;
     grid-gap: 10px;
