@@ -1,0 +1,116 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer p {
+    margin: 0;
+}
+div#gridContainer {
+    margin: 20px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+div#gridContainer section {
+    height: 160px;
+    background-color: darkcyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+}
+@media only screen and (min-width: 601px) {
+    div#gridContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+    div#cardContainer {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 600px) {
+    div#gridContainer {
+        grid-template-columns: 1fr;
+    }
+    div#cardContainer {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Flip cards */
+#cardContainer {
+    margin: 20px;
+    display: grid;
+    grid-gap: 10px;
+}
+
+.outerCard {
+    perspective: 1000px;
+    height: 200px;
+}
+
+.innerCard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.outerCard:hover .innerCard {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.frontSide, .backSide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+  }
+
+/* Style the back side for all cards */
+.backSide {
+    transform: rotateY(180deg);
+}
+
+#card1 .frontSide {
+    background-color: goldenrod;
+    color: black;
+}
+#card1 .backSide {
+    background-color:darkslateblue;
+    color: white;
+}
+
+#card2 .frontSide {
+    background-color: lightblue;
+    color: black;
+}
+#card2 .backSide {
+    background-color: darkred;
+    color: white;
+}
+
+#card3 .frontSide {
+    background-color: lightpink;
+    color: black;
+}
+#card3 .backSide {
+    background-color:black;
+    color: white;
+}
+  
+  
